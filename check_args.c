@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mac               #+#    #+#             */
-/*   Updated: 2025/01/23 17:53:02 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/26 21:26:53 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void check_args(int argc, char **argv)
                 ft_error("Error");
             if (check_duplicates(num, argv)) 
                 ft_error("Error");
-            if (num < -2147483648 || num > 2147483647)
+            if (num < INT_MIN || num > INT_MAX)
                 ft_error("Error");
             j++;
         }

@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/01/25 14:52:00 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/26 20:43:31 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct list
     struct list *next;
     struct list *prev;
 } t_list;
-
+void print_stack(t_list *stack);
+void update_indices(t_list *stack);
 void check_args(int argc, char **argv);
 char	**ft_split(char const *s, char c);
 int ft_atoi(char *s);
@@ -45,4 +46,23 @@ void ft_putendl_fd(char *s,int fd);
 t_list *min(t_list *stack);
 t_list *max(t_list *stack);
 bool stack_sorted(t_list *stack);
+int pa(t_list **a,t_list **b);
+int pb(t_list **a,t_list **b);
+int rra(t_list **a);
+int rrb(t_list **b);
+int rrr(t_list **a,t_list **b);
+int ra(t_list **a);
+int rb(t_list **b);
+int rr(t_list **a,t_list **b);
+int sa(t_list **a);
+int sb(t_list **b);
+int ss(t_list **a,t_list **b);
+void sort_three(t_list **stack);
+void sort_stack(t_list **a,t_list **b);
+void sort_a(t_list **a);
+void sort_b(t_list **a,t_list **b);
+void move_element_totop(t_list **b,int value);
+int element_topush(t_list *a,t_list *b);
+int cost_b(t_list *b,int value);
+int cost_a(t_list *a,int value);
 #endif
