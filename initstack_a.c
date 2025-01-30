@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 17:32:28 by mac               #+#    #+#             */
-/*   Updated: 2025/01/23 17:54:54 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 02:16:00 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void initstack_a(t_list **a,int argc,char **argv)
             ft_lstadd_back(a,new);
             j++;
         }
-        ft_free(args);
+        free_split(args);
         i++;
     }
 }

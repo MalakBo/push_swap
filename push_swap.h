@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/01/26 20:43:31 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 02:15:15 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ t_list *ft_lstlast(t_list *lst);
 void initstack_a(t_list **a,int argc,char **argv);
 int ft_lstsize(t_list *lst);
 void ft_putendl_fd(char *s,int fd);
-t_list *min(t_list *stack);
-t_list *max(t_list *stack);
-bool stack_sorted(t_list *stack);
+int stack_sorted(t_list *stack);
 int pa(t_list **a,t_list **b);
 int pb(t_list **a,t_list **b);
 int rra(t_list **a);
@@ -65,4 +63,8 @@ void move_element_totop(t_list **b,int value);
 int element_topush(t_list *a,t_list *b);
 int cost_b(t_list *b,int value);
 int cost_a(t_list *a,int value);
+t_list *max(t_list *stack);
+t_list *min(t_list *stack);
+void ft_freestack(t_list **stack);
+void	free_split(char **a);
 #endif

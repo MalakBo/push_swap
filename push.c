@@ -6,13 +6,13 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 00:29:53 by mac               #+#    #+#             */
-/*   Updated: 2025/01/26 21:47:08 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 01:50:35 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int push(t_list **from,t_list **to)
+int push(t_list **to,t_list **from)
 {
     t_list *tmp;
     if(*from == NULL)

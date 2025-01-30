@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 18:10:59 by mac               #+#    #+#             */
-/*   Updated: 2025/01/26 22:01:50 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/26 23:41:03 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ int swap(t_list **stack)
 {
     t_list *head;
     t_list *next2;
+
     if (ft_lstsize(*stack) < 2)
         return (-1);
         head = *stack;
         next2 = head->next;
-        if(!head || !next2)
-            ft_error("Error while swapping!");
         head->next = next2->next;
         next2->next = head;
         *stack = next2;

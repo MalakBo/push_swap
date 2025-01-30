@@ -6,22 +6,22 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:37:13 by mac               #+#    #+#             */
-/*   Updated: 2025/01/25 14:51:26 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/27 00:59:54 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-bool stack_sorted(t_list *stack)
+int stack_sorted(t_list *stack)
 {
     if(!stack || !stack->next)
-        return(true);
+        return(1);
     while(stack->next)
     {
         if(stack->number > stack->next->number)
-            return(false);
+            return(0);
         stack = stack->next;
     }
-    return(true);
+    return(1);
 }
 t_list *min(t_list *stack)
 {

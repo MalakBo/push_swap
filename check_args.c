@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mac               #+#    #+#             */
-/*   Updated: 2025/01/26 21:26:53 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 02:18:07 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int check_duplicates(long num,char **argv)
                 count++;
             j++;
         }
-        ft_free(argos_msplitin);
+        free_split(argos_msplitin);
         }
         else if(ft_atoi(argv[i]) == num)
             count++;
@@ -81,7 +81,7 @@ void check_args(int argc, char **argv)
                 ft_error("Error");
             j++;
         }
-        ft_free(args);
+        free_split(args);
         i++;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:52:18 by mac               #+#    #+#             */
-/*   Updated: 2025/01/21 01:31:25 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 02:08:19 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,15 @@ void ft_free(char **str)
 		free(str[i]);
 		i--;
 	}
+}
+void ft_freestack(t_list **stack)
+{
+    t_list *temp;
+
+    while (*stack)
+    {
+        temp = *stack;
+        *stack = (*stack)->next;
+        free(temp);
+    }
 }

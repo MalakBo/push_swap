@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:12:03 by mac               #+#    #+#             */
-/*   Updated: 2025/01/21 00:31:57 by mac              ###   ########.fr       */
+/*   Updated: 2025/01/30 02:14:44 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	count_words(const char *str, char c)
 	return (count);
 }
 
-static void	free_split(char **a)
+void	free_split(char **a)
 {
 	int	i;
 
