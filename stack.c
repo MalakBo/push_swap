@@ -6,11 +6,26 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:37:13 by mac               #+#    #+#             */
-/*   Updated: 2025/01/27 00:59:54 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/05 18:29:39 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+void update_index(t_list *stack)
+{
+    int i;
+    t_list *temp;
+
+    i = 0;
+    temp = stack;
+
+    while(temp)
+    {
+        temp->index = i;
+        i++;
+        temp = temp->next;
+    }
+}
 int stack_sorted(t_list *stack)
 {
     if(!stack || !stack->next)
@@ -50,4 +65,27 @@ t_list *max(t_list *stack)
         stack = stack->next;
     }
     return(max_node);
+}
+void find_target(t_list *a, t_list *b)
+{
+    int n;
+    t_list *temp;
+
+    n = LONG_MAX;
+    temp = a;
+    while(b)
+    {
+        while(temp)
+        {
+            if(temp->number > b->number && n > temp->number)
+            {
+                b->target = temp;
+                n = temp->number;
+            }
+            temp = temp->next;
+        }
+        if(n == LONG_MAX)
+            b->target = min(a);
+        b = b->next;
+    }
 }

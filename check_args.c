@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mac               #+#    #+#             */
-/*   Updated: 2025/01/30 02:18:07 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/05 17:21:50 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static int check_duplicates(long num,char **argv)
     char **argos_msplitin;
     
     i = 1;
-    j = 0;
     count = 0;
     while(argv[i])
     {
+        j = 0;
         if(ft_strchr(argv[i],' '))
         {
         argos_msplitin = ft_split(argv[i],' ');
