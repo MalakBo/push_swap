@@ -6,17 +6,20 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/02/07 17:58:03 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/07 18:39:31 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
+#define BUFFER_SIZE 4
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+
 
 typedef struct list
 {
@@ -59,6 +62,8 @@ void sort(t_list **a, t_list **b);
 void update(t_list **a,t_list **b);
 void put_on_top(t_list **a,t_list **b);
 int ft_strcmp(char *s1,char *s2);
+void execute_operation(char *operation,t_list **a,t_list **b);
+int is_operation(char *operation);
 //operations
 int pa(t_list **a,t_list **b);
 int pb(t_list **a,t_list **b);
