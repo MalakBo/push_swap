@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/02/05 18:31:27 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/07 17:58:03 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct list
     int number;
     int index;
     int moves;
+    int on_middle;
     
     struct list *next;
     struct list *target;
@@ -33,7 +34,7 @@ typedef struct list
 void print_stack(t_list *stack);
 void check_args(int argc, char **argv);
 char	**ft_split(char const *s, char c);
-int ft_atoi(char *s);
+long ft_atoi(char *s);
 int ft_isdigit(int c);
 void ft_error(char *err);
 size_t	ft_strlen(const char *str);
@@ -48,12 +49,16 @@ int ft_lstsize(t_list *lst);
 void ft_putendl_fd(char *s,int fd);
 int stack_sorted(t_list *stack);
 void sort_three(t_list **stack);
-void sort_stack(t_list **a,t_list **b);
+void sort_stack(t_list **a, t_list **b);
 t_list *max(t_list *stack);
 t_list *min(t_list *stack);
 void ft_freestack(t_list **stack);
 void	free_split(char **a);
-
+t_list *min_move(t_list *stack);
+void sort(t_list **a, t_list **b);
+void update(t_list **a,t_list **b);
+void put_on_top(t_list **a,t_list **b);
+int ft_strcmp(char *s1,char *s2);
 //operations
 int pa(t_list **a,t_list **b);
 int pb(t_list **a,t_list **b);

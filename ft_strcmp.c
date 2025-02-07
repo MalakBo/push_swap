@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 23:16:02 by mac               #+#    #+#             */
-/*   Updated: 2025/02/07 16:56:35 by mac              ###   ########.fr       */
+/*   Created: 2025/02/07 17:57:45 by mac               #+#    #+#             */
+/*   Updated: 2025/02/07 17:57:51 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long ft_atoi(char *s)
+int ft_strcmp(char *s1,char *s2)
 {
-    long result;
-    int sign;
     int i;
-    
     i = 0;
-    result = 0;
-    sign = 1;
-    while(s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
+    while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
         i++;
-    if(s[i] == '-')
-    {
-        sign = -1;
-        i++;
-    }
-    else if(s[i] == '+')
-        i++;
-    while(s[i] && (s[i] >= '0' && s[i] <= '9'))
-    {
-        result = result * 10 + (s[i] - '0');
-        i++;
-    }
-    return (result * sign);
+    return(s1[i] - s2[i]);
 }

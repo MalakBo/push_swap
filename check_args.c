@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mac               #+#    #+#             */
-/*   Updated: 2025/02/05 17:21:50 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/07 16:48:53 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 static int isnumber(char *num)
 {
-    int i;
+    int i = 0;
 
-    i = 0;
-    if(num[i] == '-' || num[i] == '+')
+    if ((num[i] == '-' || num[i] == '+') && !ft_isdigit(num[i + 1]))
+        return (0);
+    if (num[i] == '-' || num[i] == '+')
         i++;
-    if(!ft_isdigit(num[i]))
-        return(0);
-    while(num[i])
+    while (num[i])
     {
-        if(!ft_isdigit(num[i]))
-            return(0);
+        if (!ft_isdigit(num[i]))
+            return (0);
         i++;
     }
-    return(1);
+    return (1);
 }
+
 static int check_duplicates(long num,char **argv)
 {
     int (i),(j),(count);
@@ -59,6 +59,20 @@ static int check_duplicates(long num,char **argv)
     return(0);
             
 }
+static void check_empty_args(char *str)
+{
+    if (!str || !str[0])
+        ft_error("Error");
+}
+
+static void check_split_result(char **args)
+{
+    if (!args || !args[0])
+    {
+        free_split(args);
+        ft_error("Error");
+    }
+}
 void check_args(int argc, char **argv)
 {
     int     (i),(j);
@@ -68,7 +82,9 @@ void check_args(int argc, char **argv)
     i = 1;
     while (i < argc)
     {
+        check_empty_args(argv[i]);
         args = ft_split(argv[i], ' '); 
+        check_split_result(args);
         j = 0;
         while (args[j])
         {
@@ -77,7 +93,7 @@ void check_args(int argc, char **argv)
                 ft_error("Error");
             if (check_duplicates(num, argv)) 
                 ft_error("Error");
-            if (num < INT_MIN || num > INT_MAX)
+            if (num < -2147483648 || num > 2147483647)
                 ft_error("Error");
             j++;
         }

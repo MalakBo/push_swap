@@ -6,13 +6,15 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:52:27 by mac               #+#    #+#             */
-/*   Updated: 2025/02/05 17:21:37 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/07 16:55:24 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void sort_three(t_list **stack)
 {
+    if(!stack || !(*stack) || !(*stack)->next)
+        return;
     t_list *max_node;
     max_node = max(*stack);
     if (max_node == (*stack))
