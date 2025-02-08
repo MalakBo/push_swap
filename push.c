@@ -3,39 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 00:29:53 by mac               #+#    #+#             */
-/*   Updated: 2025/01/30 01:50:35 by mac              ###   ########.fr       */
+/*   Created: 2025/01/24 00:29:53 by mbouyi            #+#    #+#             */
+/*   Updated: 2025/02/08 18:28:11 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int push(t_list **to,t_list **from)
+int	push(t_list **to, t_list **from)
 {
-    t_list *tmp;
-    if(*from == NULL)
-        return (-1);
-    tmp = *from;
-    *from = (*from)->next;
-    tmp->next = *to;
-    *to = tmp;
-    return (0);
+	t_list	*tmp;
+
+	if (*from == NULL)
+		return (-1);
+	tmp = *from;
+	*from = (*from)->next;
+	tmp->next = *to;
+	*to = tmp;
+	return (0);
 }
-int pa(t_list **a,t_list **b)
+
+int	pa(t_list **a, t_list **b)
 {
-    if(push(a,b) == -1)
-        return(-1);
-    ft_putendl_fd("pa",1);
-    return(0);
+	if (push(a, b) == -1)
+		return (-1);
+	ft_putendl_fd("pa", 1);
+	return (0);
 }
-int pb(t_list **a,t_list **b)
+
+int	pb(t_list **a, t_list **b)
 {
-    if (!(*a)) 
-        return 0;
-    if(push(b,a) == -1)
-        return(-1);
-    ft_putendl_fd("pb",1);
-    return(0);
+	if (!(*a))
+		return (0);
+	if (push(b, a) == -1)
+		return (-1);
+	ft_putendl_fd("pb", 1);
+	return (0);
 }

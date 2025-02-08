@@ -6,7 +6,7 @@
 /*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:12:03 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/07 22:59:21 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/08 18:26:44 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char	*ft_strdup(const char *s)
 	dest[i] = '\0';
 	return (dest);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	n;
