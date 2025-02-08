@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 23:12:03 by mac               #+#    #+#             */
-/*   Updated: 2025/01/30 02:14:44 by mac              ###   ########.fr       */
+/*   Created: 2025/01/20 23:12:03 by mbouyi            #+#    #+#             */
+/*   Updated: 2025/02/07 22:59:21 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,7 @@ void	free_split(char **a)
 		free(a[i++]);
 	free(a);
 }
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
 
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 char	*ft_strdup(const char *s)
 {
 	int		i;

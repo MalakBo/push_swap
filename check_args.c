@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 22:39:45 by mac               #+#    #+#             */
-/*   Updated: 2025/02/07 16:48:53 by mac              ###   ########.fr       */
+/*   Created: 2025/01/20 22:39:45 by mbouyi               #+#    #+#             */
+/*   Updated: 2025/02/07 22:56:28 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static int check_duplicates(long num,char **argv)
     if(count > 1)
         return(1);
     return(0);
-            
 }
 static void check_empty_args(char *str)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 23:16:02 by mac               #+#    #+#             */
-/*   Updated: 2025/02/07 16:56:35 by mac              ###   ########.fr       */
+/*   Created: 2025/01/20 23:16:02 by mbouyi            #+#    #+#             */
+/*   Updated: 2025/02/07 22:57:39 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,56 @@ long ft_atoi(char *s)
         i++;
     }
     return (result * sign);
+}
+
+int ft_isdigit(int c)
+{
+    if(c >= 48 && c <= 57)
+        return (1);
+    else
+        return(0);
+}
+
+t_list *min(t_list *stack)
+{
+    t_list *min_node;
+    if(!stack)
+        return NULL;
+    min_node = stack;
+    while(stack)
+    {
+        if(stack->number < min_node->number)
+            min_node = stack;
+        stack = stack->next;
+    }
+    return(min_node);
+}
+
+t_list *max(t_list *stack)
+{
+    t_list *max_node;
+    if(!stack)
+        return (NULL);
+    max_node = stack;
+    while(stack)
+    {
+        if(stack->number > max_node->number)
+            max_node = stack;
+        stack = stack->next;
+    }
+    return(max_node);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
