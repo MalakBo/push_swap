@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initstack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 16:41:51 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/08 22:37:21 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/09 00:05:21 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	initstack_a(t_list **a, int argc, char **argv)
 	int		j;
 	char	**args;
 
+	*a = NULL;
 	i = 1;
 	while (i < argc)
 	{

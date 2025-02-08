@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/02/08 18:00:26 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/09 00:15:17 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# define BUFFER_SIZE 1024
+
+# define BUFFER_SIZE 4
 
 # include <limits.h>
 # include <stdlib.h>
@@ -67,6 +68,7 @@ void			sort(t_list **a, t_list **b);
 // Stack Manipulation
 void			update(t_list **a, t_list **b);
 void			put_on_top(t_list **a, t_list **b);
+void	node_on_top(t_list **a, t_list **b);
 
 // Operations
 int				pa(t_list **a, t_list **b);
@@ -88,5 +90,12 @@ void			read_operations(t_list **a, t_list **b);
 
 // String Manipulation
 char			**ft_split(char const *s, char c);
+void	sort_a(t_list **a);
+void	middle(t_list *a, t_list *b);
+void	find_target(t_list *a, t_list *b);
+void	middle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
+void	nmiddle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
+void	target_on_top(t_list **a, t_list *target);
+t_list	*min_move(t_list *stack);
 
 #endif

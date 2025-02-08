@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:52:27 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/08 18:34:20 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/09 00:14:30 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,39 @@ void	sort_three(t_list **stack)
 		rra(stack);
 	if ((*stack)->number > (*stack)->next->number)
 		sa(stack);
+}
+t_list	*min_move(t_list *stack)
+{
+	t_list	*min_node;
+
+	if (!stack)
+		return (NULL);
+	min_node = stack;
+	while (stack)
+	{
+		if (stack->moves < min_node->moves)
+			min_node = stack;
+		stack = stack->next;
+	}
+	return (min_node);
+}
+
+void	sort_a(t_list **a)
+{
+	t_list	*mini;
+	int		n;
+
+	mini = min(*a);
+	if (mini->on_middle)
+		n = mini->index;
+	else
+		n = ft_lstsize(*a) - mini->index;
+	while (n)
+	{
+		if (mini->on_middle)
+			ra(a);
+		else
+			rra(a);
+		n--;
+	}
 }
