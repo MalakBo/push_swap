@@ -16,8 +16,8 @@
 # define BUFFER_SIZE 4
 
 # include <limits.h>
-# include <stdlib.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 typedef struct list
@@ -68,7 +68,7 @@ void			sort(t_list **a, t_list **b);
 // Stack Manipulation
 void			update(t_list **a, t_list **b);
 void			put_on_top(t_list **a, t_list **b);
-void	node_on_top(t_list **a, t_list **b);
+void			node_on_top(t_list **a, t_list **b);
 
 // Operations
 int				pa(t_list **a, t_list **b);
@@ -90,12 +90,12 @@ void			read_operations(t_list **a, t_list **b);
 
 // String Manipulation
 char			**ft_split(char const *s, char c);
-void	sort_a(t_list **a);
-void	middle(t_list *a, t_list *b);
-void	find_target(t_list *a, t_list *b);
-void	middle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
-void	nmiddle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
-void	target_on_top(t_list **a, t_list *target);
-t_list	*min_move(t_list *stack);
+void			sort_a(t_list **a);
+void			middle(t_list *a, t_list *b);
+void			find_target(t_list *a, t_list *b);
+void			middle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
+void			nmiddle_on_top(t_list **a, t_list **b, t_list *cheapest, int n);
+void			target_on_top(t_list **a, t_list *target);
+t_list			*min_move(t_list *stack);
 
 #endif

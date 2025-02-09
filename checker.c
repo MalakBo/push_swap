@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 17:55:25 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/09 00:16:46 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/09 14:49:24 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	read_operations(t_list **a, t_list **b)
 	char	buff[BUFFER_SIZE + 1];
 	int		n;
 
-    n = 0;
+	n = 0;
 	while ((n = read(0, buff, BUFFER_SIZE)) > 0)
 	{
 		buff[n] = '\0';
@@ -69,18 +69,6 @@ void	read_operations(t_list **a, t_list **b)
 	}
 }
 
-void	print_stack(t_list *stack)
-{
-	printf("Stack: ");
-	while (stack)
-	{
-		printf("(%d, idx:%d, moves:%d) -> ", stack->number, stack->index,
-			stack->moves);
-		stack = stack->next;
-	}
-	printf("NULL\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	*a;
@@ -88,18 +76,17 @@ int	main(int argc, char **argv)
 
 	check_args(argc, argv);
 	initstack_a(&a, argc, argv);
-    if (!a)
-    {
-        ft_error("Error\n");
-        return (1);
-    }
+	if (!a)
+	{
+		ft_error("Error\n");
+		return (1);
+	}
 	b = NULL;
 	read_operations(&a, &b);
 	if (stack_sorted(a) && !b)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);
-	print_stack(a);
 	ft_freestack(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/08 18:24:27 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/09 14:47:25 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ static int	check_duplicates(long num, char **argv)
 			count++;
 		i++;
 	}
-	if (count > 1)
-		return (1);
-	return (0);
+	return (count > 1);
 }
 
 static void	check_empty_args(char *str)

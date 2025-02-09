@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 14:52:27 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/09 00:14:30 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/09 14:54:11 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sort_three(t_list **stack)
 	if ((*stack)->number > (*stack)->next->number)
 		sa(stack);
 }
+
 t_list	*min_move(t_list *stack)
 {
 	t_list	*min_node;
