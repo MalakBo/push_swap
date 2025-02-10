@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 18:27:08 by mac               #+#    #+#             */
-/*   Updated: 2025/02/10 16:47:01 by mac              ###   ########.fr       */
+/*   Created: 2025/01/20 18:27:08 by mbouyi            #+#    #+#             */
+/*   Updated: 2025/02/10 21:02:14 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct list
 }				t_list;
 
 // Utility Functions
-void			ft_error(char *err);
+void			ft_error(char **args);
 long			ft_atoi(char *s);
 int				ft_isdigit(int c);
 size_t			ft_strlen(const char *str);
@@ -63,7 +63,7 @@ void			check_args(int argc, char **argv);
 // Sorting Functions
 void			sort_three(t_list **stack);
 void			sort_stack(t_list **a, t_list **b);
-void	sort_a(t_list **a);
+void			sort_a(t_list **a);
 
 // Stack Manipulation
 void			update(t_list **a, t_list **b);
@@ -90,8 +90,8 @@ void			read_operations(t_list **a, t_list **b);
 
 // String Manipulation
 char			**ft_split(char const *s, char c);
-char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*get_next_line(int fd);
+char			*ft_strjoin(const char *s1, const char *s2);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*get_next_line(int fd);
 
 #endif

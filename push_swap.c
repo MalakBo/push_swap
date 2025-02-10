@@ -6,7 +6,7 @@
 /*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:51:56 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/09 14:53:54 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/10 22:57:49 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv);
 	initstack_a(&a, argc, argv);
 	if (stack_sorted(a))
-		printf("Stack is already sorted <3\n");
+	{
+		ft_freestack(&a);
+		return (0);
+	}
 	sort_stack(&a, &b);
 	ft_freestack(&a);
 	ft_freestack(&b);

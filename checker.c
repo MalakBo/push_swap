@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 17:55:25 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/10 16:46:22 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/10 23:30:12 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,19 @@ void	read_operations(t_list **a, t_list **b)
 {
 	char	*line;
 
-	while ((line = get_next_line(0)) != NULL)
+	line = get_next_line(0);
+	while (line)
 	{
 		if (!is_operation(line))
 		{
 			free(line);
-			ft_error("Error\n");
+			write(2, "Error\n", 6);
 			ft_freestack(a);
 			ft_freestack(b);
 			exit(1);
 		}
 		execute_operation(line, a, b);
+		line = get_next_line(0);
 		free(line);
 	}
 }
@@ -79,7 +81,7 @@ int	main(int argc, char **argv)
 	initstack_a(&a, argc, argv);
 	if (!a)
 	{
-		ft_error("Error\n");
+		ft_error(argv);
 		return (1);
 	}
 	b = NULL;

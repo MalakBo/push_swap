@@ -6,7 +6,7 @@
 /*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 23:52:18 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/09 14:54:28 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/10 21:09:04 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,19 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-void	ft_error(char *err)
+void	ft_error(char **args)
 {
-	ft_putendl_fd(err, 1);
+	int	i;
+
+	i = 0;
+	ft_putendl_fd("Error", 1);
+	while (args[i])
+	{
+		free(args[i]);
+		args[i] = NULL;
+		i++;
+	}
+	free(args);
 	exit(0);
 }
 

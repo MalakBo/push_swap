@@ -6,7 +6,7 @@
 /*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 22:39:45 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/10 20:45:36 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/10 23:01:32 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ static int	check_duplicates(long num, char **argv)
 			count++;
 		i++;
 	}
-	return(count > 1);
+	return (count > 1);
 }
 
 static void	check_empty_args(char *str)
 {
 	if (!str || !str[0])
-		ft_error("Error");
+		write(2, "Error\n", 6);
 }
 
 static void	check_split_result(char **args)
@@ -69,7 +69,7 @@ static void	check_split_result(char **args)
 	if (!args || !args[0])
 	{
 		free_split(args);
-		ft_error("Error");
+		ft_error(args);
 	}
 }
 
@@ -90,11 +90,11 @@ void	check_args(int argc, char **argv)
 		{
 			num = ft_atoi(args[j]);
 			if (!isnumber(args[j]))
-				ft_error("Error");
+				ft_error(args);
 			if (check_duplicates(num, argv))
-				ft_error("Error");
+				ft_error(args);
 			if (num < -2147483648 || num > 2147483647)
-				ft_error("Error");
+				ft_error(args);
 			j++;
 		}
 		free_split(args);

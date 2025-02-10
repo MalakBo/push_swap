@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 23:41:23 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/10 16:05:54 by mac              ###   ########.fr       */
+/*   Updated: 2025/02/10 23:01:10 by mbouyi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	free((char *)s1);
 	return (s3);
 }
+
 char	*get_buffer(int fd, char *res)
 {
 	ssize_t	i;
@@ -117,31 +118,3 @@ char	*get_next_line(int fd)
 	res = get_n(res);
 	return (line);
 }
-
-// int main()
-// {
-//     int fd = open("test.txt",O_RDONLY);
-//     char *line;
-//     line = get_next_line(fd);
-//     if(line)
-//     {
-//         printf("%s", line);
-//         free(line);
-//     }
-// //     while((line = get_next_line(fd)))
-// //     {
-// //         printf("%s",line);
-// //         free(line);
-// //    }
-//    close(fd);
-//    return(0);
-// }
-/*int main()
-{
-		int fd = open("test.txt",O_RDONLY);
-		printf("%s",get_next_line(fd));
-		printf("%s",get_next_line(fd));
-		printf("%s",get_next_line(fd));
-		printf("%s",get_next_line(fd));
-		printf("%s",get_next_line(fd));
-}*/
