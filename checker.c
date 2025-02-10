@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbouyi <mbouyi@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 17:55:25 by mbouyi            #+#    #+#             */
-/*   Updated: 2025/02/09 14:49:24 by mbouyi           ###   ########.fr       */
+/*   Updated: 2025/02/10 16:46:22 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,20 @@ void	execute_operation(char *operation, t_list **a, t_list **b)
 
 void	read_operations(t_list **a, t_list **b)
 {
-	char	buff[BUFFER_SIZE + 1];
-	int		n;
+	char	*line;
 
-	n = 0;
-	while ((n = read(0, buff, BUFFER_SIZE)) > 0)
+	while ((line = get_next_line(0)) != NULL)
 	{
-		buff[n] = '\0';
-		if (!is_operation(buff))
+		if (!is_operation(line))
 		{
+			free(line);
 			ft_error("Error\n");
-			return ;
+			ft_freestack(a);
+			ft_freestack(b);
+			exit(1);
 		}
-		execute_operation(buff, a, b);
+		execute_operation(line, a, b);
+		free(line);
 	}
 }
 
